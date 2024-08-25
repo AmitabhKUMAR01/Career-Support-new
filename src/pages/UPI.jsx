@@ -40,7 +40,7 @@ const UPI = () => {
           rel="noopener noreferrer"
           className="mt-8 bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-blue-600"
         >
-          Google Form
+          google Form 
         </a>
       </div>
 
