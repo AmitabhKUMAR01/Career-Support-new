@@ -12,6 +12,7 @@ function App() {
        <Routes>
        <Route path='/' element={<Home/>}/>
         <Route path='/upi' element={<UPI/>}/>
+        <Route path='/register' element={<UPI/>}/>
         </Routes> 
     </Router>
   )

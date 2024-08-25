@@ -1,11 +1,18 @@
 
 import React from 'react';
 import upi from '../assets/UPI.jpg';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import { HiHome } from "react-icons/hi";
 
 const UPI = () => {
   const navigate = useNavigate();
+  const location = useLocation(); // Get the current route location
+
+  // Determine the Google Form link based on the current route
+  const googleFormLink =
+    location.pathname === '/upi'
+      ? 'https://forms.gle/P2JaT4opDSn1UwE29' // Link for '/upi' route
+      : 'https://google.com'; // Link for '/register' route (or any other route)
 
   return (
     <div className="h-screen flex flex-col justify-between items-center text-white p-4">
@@ -14,7 +21,7 @@ const UPI = () => {
         onClick={() => navigate('/')}
         className="absolute left-4 top-0 mt-4 bg-green-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-green-600"
       >
-<HiHome />
+        <HiHome />
       </button>
 
       {/* Main Content */}
@@ -35,12 +42,12 @@ const UPI = () => {
 
         {/* Google Form Button */}
         <a
-          href="https://forms.gle/P2JaT4opDSn1UwE29"
+          href={googleFormLink} // Use the dynamic Google Form link
           target='_blank'
           rel="noopener noreferrer"
           className="mt-8 bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-blue-600"
         >
-          google Form 
+          Google Form
         </a>
       </div>
 

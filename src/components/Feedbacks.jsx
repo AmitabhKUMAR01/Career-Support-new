@@ -17,6 +17,7 @@ import Bhavna from "../assets/People/Bhavna.jpg"
 import Ankit from "../assets/People/Ankit.jpg"
 import Anjali from "../assets/People/Anjali.jpg"
 import anmol from "../assets/People/anmol.jpg"
+import you from "../assets/People/you.jpg"
 const people = [
   {
     name: "Yogesh Bhardwaj",
@@ -83,6 +84,11 @@ const people = [
     title: "Sales Executive (Prime)",
     company: "Teamlease Pvt Ltd",
     image: Geetika,
+  },{
+    name: "YOU",
+    title: "Add in our success story",
+    company: "",
+    image:you,
   },
 ];
 const PeopleList = () => {
@@ -114,7 +120,7 @@ const PeopleList = () => {
 };
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    <div className={`mt-12 bg-black-100 rounded-[20px]`} id="feedback">
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >

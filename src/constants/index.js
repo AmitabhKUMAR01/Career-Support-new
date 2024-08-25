@@ -32,12 +32,15 @@ import {
       title: "About",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "feedback",
+      title: "Stories",
     },
     {
       id: "contact",
       title: "Contact",
+    },{
+      id: "register",
+      title: "Register",
     },
   ];
   
