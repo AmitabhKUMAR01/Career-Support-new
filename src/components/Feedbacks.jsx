@@ -5,44 +5,113 @@ import { styles } from "../style";
 import StarWrapper from "./hoc/sectionWrapper";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
-
-const FeedbackCard = ({
-  index,
-  testimonial,
-  name,
-  designation,
-  company,
-  image,
-}) => (
-  <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
-  >
-    <p className='text-white font-black text-[48px]'>"</p>
-
-    <div className='mt-1'>
-      <p className='text-white tracking-wider text-[18px]'>{testimonial}</p>
-
-      <div className='mt-7 flex justify-between items-center gap-1'>
-        <div className='flex-1 flex flex-col'>
-          <p className='text-white font-medium text-[16px]'>
-            <span className='blue-text-gradient'>@</span> {name}
-          </p>
-          <p className='mt-1 text-secondary text-[12px]'>
-            {designation} of {company}
-          </p>
+//peoples import 
+import Abhishek from "../assets/People/Abhishek.jpg"
+import Yogesh from "../assets/People/yogesh.jpg"
+import Sarita from "../assets/People/Sarita.jpg"
+import Islam from "../assets/People/islam.jpg"
+import Harish from "../assets/People/Harish.jpg"
+import Geetika from "../assets/People/Geetika.jpg"
+import Chetan from "../assets/People/Chetan.jpg"
+import Bhavna from "../assets/People/Bhavna.jpg"
+import Ankit from "../assets/People/Ankit.jpg"
+import Anjali from "../assets/People/Anjali.jpg"
+import anmol from "../assets/People/anmol.jpg"
+const people = [
+  {
+    name: "Yogesh Bhardwaj",
+    title: "Asst. Manager",
+    company: "3i Business Pvt Ltd",
+    image: Yogesh,
+  },
+  {
+    name: "Bhavana Mahajan",
+    title: "Trainer",
+    company: "Housing.com",
+    image: Bhavna,
+  },
+  {
+    name: "Mohd. Islam",
+    title: "Team Leader",
+    company: "I-Energizer (Tata Img)",
+    image: Islam,
+  },
+  {
+    name: "Anjali Chaudhary",
+    title: "Relationship Manager",
+    company: "Magicbricks.com",
+    image: Anjali,
+  },
+  {
+    name:"Anmol Maheshwari",
+    title:"Er. HR Hiring (Hiring Partner)",
+    company:"I-energizer pvt ltd",
+    image: anmol
+  },
+  {
+    name: "Chetan Malviye",
+    title: "Team Leader",
+    company: "ICCS Pvt Ltd",
+    image: Chetan,
+  },
+  {
+    name: "Harish",
+    title: "Sr. Sales Executive",
+    company: "3i Business Pvt Ltd",
+    image: Harish,
+  },
+  {
+    name: "Ankit Saxena",
+    title: "Relationship Manager",
+    company: "PolicyBazaar.com",
+    image: Ankit,
+  },
+  {
+    name: "Abhishek Singh",
+    title: "Sales Executive",
+    company: "Housing.com",
+    image: Abhishek,
+  },
+  {
+    name: "Sarita",
+    title: "Sales Executive",
+    company: "3i Business Pvt Ltd",
+    image: Sarita,
+  },
+  {
+    name: "Geetika Badgali",
+    title: "Sales Executive (Prime)",
+    company: "Teamlease Pvt Ltd",
+    image: Geetika,
+  },
+];
+const PeopleList = () => {
+  return (
+ 
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      {people.map((person, index) => (
+        <div
+          key={index}
+          className="bg-gradient-to-b from-[#1d2d50] to-[#133b5c] rounded-lg p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1"
+        >
+          <div className="overflow-hidden rounded-t-lg">
+            <img
+              src={person.image}
+              alt={person.name}
+              className="w-full h-[20rem] rounded-t-lg transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <h3 className="text-xl font-bold text-white">{person.name}</h3>
+            <p className="text-gray-300">{person.title}</p>
+            <p className="text-gray-400">{person.company}</p>
+          </div>
         </div>
-
-        <img
-          src={image}
-          alt={`feedback_by-${name}`}
-          className='w-10 h-10 rounded-full object-cover'
-        />
-      </div>
+      ))}
     </div>
-  </motion.div>
-);
 
+  );
+};
 const Feedbacks = () => {
   return (
     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
@@ -51,14 +120,13 @@ const Feedbacks = () => {
       >
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonials.</h2>
+          <h2 className={styles.sectionHeadText}>Our Success Stories</h2>
         </motion.div>
       </div>
-      <div className={`-mt-20 pb-14 ${styles.paddingX} flex flex-wrap gap-7`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
-        ))}
-      </div>
+      <div className={`-mt-20 `}>
+
+    <PeopleList/>
+            </div> 
     </div>
   );
 };

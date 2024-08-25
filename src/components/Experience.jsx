@@ -15,15 +15,17 @@ import tata from "../assets/tata.jpg";
 import sbi from "../assets/sbi.jpg";
 import flipkart from "../assets/flipkart.jpg";
 import times from "../assets/times.jpg";
+import tele from "../assets/tele.jpg"
 
 const images = [
-  { src: AE, alt: "AE" },
-  { src: airtale, alt: "Airtale" },
+  { src: AE, alt: "American Express" },
+  { src: airtale, alt: "Airtel" },
   { src: amazone, alt: "Amazon" },
+  { src: tele, alt: "Teleperformance" },
   { src: axis, alt: "Axis" },
-  { src: iner, alt: "INER" },
-  { src: polify, alt: "Policy" },
-  { src: techh, alt: "TechH" },
+  { src: iner, alt: "Inergizer" },
+  { src: polify, alt: "Policy Bazaar" },
+  { src: techh, alt: "Tech Mahindra" },
   { src: tata, alt: "Tata" },
   { src: sbi, alt: "SBI" },
   { src: flipkart, alt: "Flipkart" },
