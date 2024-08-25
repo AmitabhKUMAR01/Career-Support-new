@@ -76,10 +76,7 @@ import {
       title:"Complete course- one time payment- Rs15000",
       icon:mobile
     },
-{
-      title:"English speaking course - Rs5000",
-      icon:web
-    },
+
 {
       title:  "Already experienced- direct apply for job- Rs 1month salary"      ,
       icon:creator
