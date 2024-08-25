@@ -1,72 +1,63 @@
-import { VerticalTimeline,VerticalTimelineElement } from "react-vertical-timeline-component"
-import { motion } from "framer-motion"
-import 'react-vertical-timeline-component/style.min.css'
-import { styles } from "../style"
-import { experiences } from "../constants"
-import StarWrapper from "./hoc/sectionWrapper"
-import { textVariant } from "../utils/motion"
 
-const ExperienceCard=({experience}) => {
-  return(
-    <VerticalTimelineElement
-    contentStyle={{
-      background: "#1d1836",
-      color: "#fff",
-    }}
-    contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-    date={experience.date}
-    iconStyle={{ background: experience.iconBg }}
-    icon={
-      <div className='flex justify-center items-center w-full h-full'>
-        <img
-          src={experience.icon}
-          alt={experience.company_name}
-          className='w-[60%] h-[60%] object-contain'
-        />
-      </div>
-    }
-  >
-    <div>
-      <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-      <p
-        className='text-secondary text-[16px] font-semibold'
-        style={{ margin: 0 }}
-      >
-        {experience.company_name}
-      </p>
-    </div>
+import React from "react";
+import { motion } from "framer-motion";
+import { styles } from "../style";
+import StarWrapper from "./hoc/sectionWrapper";
+import { textVariant } from "../utils/motion";
+import AE from "../assets/AE.jpg";
+import airtale from "../assets/airtale.jpg";
+import amazone from "../assets/amazone.jpg";
+import axis from "../assets/axis.jpg";
+import iner from "../assets/iner.jpg";
+import polify from "../assets/policy.jpg";
+import techh from "../assets/techh.jpg";
+import tata from "../assets/tata.jpg";
+import sbi from "../assets/sbi.jpg";
+import flipkart from "../assets/flipkart.jpg";
+import times from "../assets/times.jpg";
 
-    <ul className='mt-5 list-disc ml-5 space-y-2'>
-      {experience.points.map((point, index) => (
-        <li
-          key={`experience-point-${index}`}
-          className='text-white-100 text-[14px] pl-1 tracking-wider'
-        >
-          {point}
-        </li>
-      ))}
-    </ul>
-  </VerticalTimelineElement>
-  )
-}
+const images = [
+  { src: AE, alt: "AE" },
+  { src: airtale, alt: "Airtale" },
+  { src: amazone, alt: "Amazon" },
+  { src: axis, alt: "Axis" },
+  { src: iner, alt: "INER" },
+  { src: polify, alt: "Policy" },
+  { src: techh, alt: "TechH" },
+  { src: tata, alt: "Tata" },
+  { src: sbi, alt: "SBI" },
+  { src: flipkart, alt: "Flipkart" },
+  { src: times, alt: "Times" },
+];
+
 const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-      <p className={styles.sectionSubText}>What i have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experience</h2>
+        <p className={styles.sectionSubText}>Our Tie-Up Placement Cell</p>
+        <h2 className={styles.sectionHeadText}>Companies</h2>
       </motion.div>
-      <div className="mt-20 flex flex-col">
-          <VerticalTimeline>
-            {
-              experiences.map((experience,index) =>(
-                  <ExperienceCard key={index} experience={experience}/>
-              ))
-            }
-          </VerticalTimeline>
+      <div className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {images.map((image, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            className="relative bg-darkblue rounded-lg overflow-hidden shadow-lg"
+            style={{ aspectRatio: "16/9" }} // Added to maintain a consistent aspect ratio
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white font-semibold">{image.alt}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default StarWrapper(Experience,"experience")
+export default StarWrapper(Experience, "experience");
