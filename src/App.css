@@ -1,0 +1,106 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+
+body {
+  background: #030321;
+  font-family: Arial;
+}
+
+.animated-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  margin-top: 1rem; /* Adjusted margin to align properly with "Welcome TO" */
+}
+
+.animated-text-svg {
+  display: block;
+  font-size: 6rem; /* Matches font size to "Welcome TO" */
+  width: 100%; /* Use 100% width for responsiveness */
+  max-width: 500px; /* Max width to control size */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 15%;
+  stroke-width: 3px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #EB3678;
+  animation-delay: -1s;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #FFFBE6;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #125B9A;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #DC0083;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+/* Media Query for Mobile Devices */
+.motive h3{
+    color: rgb(30, 255, 173);
+    text-decoration: underline;
+    font-size: 1.5rem;
+    font-family: cursive;
+    text-decoration-color: initial;
+    text-shadow: rgb(253, 244, 244) 2px 2px 9px;
+}
+.motive p{
+  color: white;
+  font-size: .7rem;
+}
+.logo{
+  height: 4rem;
+}
+.cs{
+  font-family: cursive;
+  font-size: 2rem;
+}
+@media (max-width: 600px) {
+  .animated-text-container {
+    margin-top: 0; /* Adjust margin for better alignment */
+    /* justify-content: center; */
+    /* align-items: center; Center text vertically */
+    width: 100%; /* Ensure full width on mobile */
+  }
+
+  .animated-text-svg {
+    font-size: 6rem; /* Adjust font size for smaller screens */
+    width: 100%; /* Reduce width to fit mobile screen */
+    max-width: 900px; /* Adjust max width for mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+.cs{
+  font-size: 1rem;
+}
+}
+
