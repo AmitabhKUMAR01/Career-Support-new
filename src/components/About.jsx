@@ -4,13 +4,19 @@ import { styles } from "../style";
 import { services } from "../constants";
 import StarWrapper from "./hoc/sectionWrapper";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useNavigate } from "react-router-dom";
 
 const ServiceCard = ({ index, title, icon }) => {
+  const navigate = useNavigate()
+  function goToUPI(){
+    navigate('/upi')
+  }
   return (
-    <Tilt className="xs:w-[250px] w-full">
+    <Tilt className="xs:w-[250px] w-full" >
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+    onClick={goToUPI}
       >
         <motion.div options={{
           max:45,
