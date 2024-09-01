@@ -12,7 +12,7 @@ const UPI = () => {
   const googleFormLink =
     location.pathname === '/upi'
       ? 'https://forms.gle/P2JaT4opDSn1UwE29' // Link for '/upi' route
-      : 'https://google.com'; // Link for '/register' route (or any other route)
+      : 'https://forms.gle/HhYidUnuVfsXQLRr7'; // Link for '/register' route (or any other route)
 
   return (
     <div className="h-screen flex flex-col justify-between items-center text-white p-4">
